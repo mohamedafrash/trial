@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Dietary Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="healthForm">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step-indicators">
+                    <div class="step active">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                    <div class="step">5</div>
+                </div>
+            </div>
+
+            <!-- Section 1: Dietary Preferences -->
+            <section class="form-section" id="section1">
+                <h2>Dietary Preferences and Restrictions</h2>
+                <div class="form-group">
+                    <label for="dietaryRestrictions">Do you have any dietary restrictions or allergies?</label>
+                    <textarea id="dietaryRestrictions" name="dietaryRestrictions" rows="3" placeholder="e.g., gluten, dairy, nuts, soy"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Are you open to eating:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="diet_fish"> Fish</label>
+                        <label><input type="checkbox" name="diet_seafood"> Seafood</label>
+                        <label><input type="checkbox" name="diet_poultry"> Poultry</label>
+                        <label><input type="checkbox" name="diet_vegetarian"> Prefer fully vegetarian</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="foodPreferences">Food preferences:</label>
+                    <textarea id="foodPreferences" name="foodPreferences" rows="3" placeholder="List foods you particularly like or dislike"></textarea>
+                </div>
+            </section>
+
+            <!-- Section 2: Health Goals -->
+            <section class="form-section hidden" id="section2">
+                <h2>Health Goals</h2>
+                <div class="form-group">
+                    <label>Primary health goals:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="goal_weight"> Weight management</label>
+                        <label><input type="checkbox" name="goal_energy"> Improving energy levels</label>
+                        <label><input type="checkbox" name="goal_condition"> Managing health condition</label>
+                        <label><input type="checkbox" name="goal_wellness"> General wellness</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="healthConditions">Medical conditions or medications:</label>
+                    <textarea id="healthConditions" name="healthConditions" rows="3"></textarea>
+                </div>
+            </section>
+
+            <!-- Section 3: Lifestyle -->
+            <section class="form-section hidden" id="section3">
+                <h2>Lifestyle and Habits</h2>
+                <div class="form-group">
+                    <label>Meal preparation time preference:</label>
+                    <select name="mealPrepTime">
+                        <option value="">Select an option</option>
+                        <option value="quick">Quick and easy (15-30 mins)</option>
+                        <option value="moderate">Moderate (30-60 mins)</option>
+                        <option value="elaborate">Elaborate (60+ mins)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Typical meal frequency:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="mealFrequency" value="three"> Three meals a day</label>
+                        <label><input type="radio" name="mealFrequency" value="multiple"> Multiple smaller meals</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Nutrition -->
+            <section class="form-section hidden" id="section4">
+                <h2>Nutritional Preferences</h2>
+                <div class="form-group">
+                    <label>Interest in plant-based proteins:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="protein_tofu"> Tofu</label>
+                        <label><input type="checkbox" name="protein_tempeh"> Tempeh</label>
+                        <label><input type="checkbox" name="protein_lentils"> Lentils</label>
+                        <label><input type="checkbox" name="protein_chickpeas"> Chickpeas</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="beverages">Beverage consumption:</label>
+                    <textarea id="beverages" name="beverages" rows="3" placeholder="Describe your typical beverage consumption (coffee, tea, etc.)"></textarea>
+                </div>
+            </section>
+
+            <!-- Section 5: Activity -->
+            <section class="form-section hidden" id="section5">
+                <h2>Physical Activity and Additional Info</h2>
+                <div class="form-group">
+                    <label for="exercise">Exercise routine:</label>
+                    <textarea id="exercise" name="exercise" rows="3" placeholder="Describe your exercise routine and frequency"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="waterIntake">Daily water intake:</label>
+                    <select name="waterIntake">
+                        <option value="">Select an option</option>
+                        <option value="less2">Less than 2 cups</option>
+                        <option value="2-4">2-4 cups</option>
+                        <option value="4-6">4-6 cups</option>
+                        <option value="6-8">6-8 cups</option>
+                        <option value="more8">More than 8 cups</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additional">Additional considerations:</label>
+                    <textarea id="additional" name="additional" rows="3" placeholder="Budget preferences, meal planning interests, etc."></textarea>
+                </div>
+            </section>
+
+            <div class="form-navigation">
+                <button type="button" id="prevBtn" class="nav-btn">Previous</button>
+                <button type="button" id="nextBtn" class="nav-btn">Next</button>
+                <button type="submit" id="submitBtn" class="nav-btn submit-btn hidden">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

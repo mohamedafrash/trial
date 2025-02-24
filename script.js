@@ -40,26 +40,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(formData.entries());
             
             try {
-                const response = await fetch('/submit', {
+                // Replace this URL with your Google Apps Script URL
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxvv9AQEwseFdR0RE7eSNF45yk86Ah0fqiZnK1K_X7zPeoBKCYZ--fMZ1GevM_C9yjMog/exec';
+                const response = await fetch(scriptURL, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data)
                 });
                 
-                const result = await response.json();
-                if (result.success) {
-                    alert('Form submitted successfully!');
-                    form.reset();
-                    // Reset to first section
-                    currentSection = 0;
-                    sections.forEach((section, idx) => {
-                        section.classList.toggle('hidden', idx !== 0);
-                    });
-                    updateButtons();
-                    updateProgress();
-                }
+                alert('Form submitted successfully!');
+                form.reset();
+                // Reset to first section
+                currentSection = 0;
+                sections.forEach((section, idx) => {
+                    section.classList.toggle('hidden', idx !== 0);
+                });
+                updateButtons();
+                updateProgress();
             } catch (error) {
                 console.error('Error:', error);
                 alert('Failed to submit form. Please try again.');
